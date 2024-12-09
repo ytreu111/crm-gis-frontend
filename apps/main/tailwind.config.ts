@@ -8,10 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      backgroundColor: {
+        primary: "var(--bg-primary)",
+        secondary: "var(--bg-secondary)",
+        additional: "var(--bg-additional)",
       },
+      colors: {
+        foreground: "var(--foreground)",
+        primary: "var(--text-primary)",
+        secondary: "var(--text-secondary)",
+        additional: "var(--text-additional)",
+      },
+      fo
     },
   },
   plugins: [],
