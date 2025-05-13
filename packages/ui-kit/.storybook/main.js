@@ -1,28 +1,35 @@
-import { join, dirname } from "path";
+import { join, dirname, resolve } from 'path'
 
 /**
  * This function is used to resolve the absolute path of a package.
  * It is needed in projects that use Yarn PnP or are set up within a monorepo.
  */
 function getAbsolutePath(value) {
-  return dirname(require.resolve(join(value, "package.json")));
+  return dirname(require.resolve(join(value, 'package.json')))
 }
 
 /** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
-    getAbsolutePath("@storybook/addon-onboarding"),
-    getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@storybook/addon-essentials"),
-    getAbsolutePath("@chromatic-com/storybook"),
-    getAbsolutePath("@storybook/addon-interactions"),
+    getAbsolutePath('@storybook/addon-onboarding'),
+    getAbsolutePath('@storybook/addon-links'),
+    getAbsolutePath('@storybook/addon-essentials'),
+    getAbsolutePath('@chromatic-com/storybook'),
+    getAbsolutePath('@storybook/addon-interactions'),
   ],
   framework: {
-    // name: getAbsolutePath("@storybook/react-vite"),
-    name: getAbsolutePath("@storybook/nextjs"),
+    name: getAbsolutePath('@storybook/nextjs'),
     options: {},
   },
   staticDirs: ['./static'],
-};
-export default config;
+  webpackFinal: async (config) => {
+    config.resolve ??= {}
+    config.resolve.alias ??= {}
+    config.resolve.alias['@'] = resolve(__dirname, '../src')
+
+    return config
+  },
+}
+
+export default config

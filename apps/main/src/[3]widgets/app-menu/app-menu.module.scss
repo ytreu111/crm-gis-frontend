@@ -1,0 +1,32 @@
+.app-menu-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 88px;
+  flex-shrink: 0;
+  height: 100%;
+  background: var(--color-bg);
+  position: relative;
+  z-index: 2;
+}
+
+.open-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  position: absolute;
+  z-index: 1;
+  right: -20px;
+  top: 16px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+
+  transition: right 0.2s ease-in-out, justify-content 1s ease-in-out;
+
+  &:hover {
+    right: -40px;
+    justify-content: center;
+  }
+}

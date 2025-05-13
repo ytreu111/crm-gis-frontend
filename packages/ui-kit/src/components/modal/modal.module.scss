@@ -1,0 +1,62 @@
+@use "../../style/functions";
+
+.modal-mask {
+}
+
+.ant-modal-wrapper {
+  .ant-modal-content {
+    background-color: var(--color-bg) !important;
+  }
+
+  .ant-modal-footer {
+    display: none;
+  }
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: functions.calc-spacing(3);
+  color: var(--color-text);
+  font-size: var(--text-2);
+}
+
+.modal-header {
+}
+
+.modal-header-content {
+  display: flex;
+  align-items: center;
+  gap: functions.calc-spacing(2.5);
+}
+
+.modal-header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  border: 1px solid var(--color-icon);
+  width: 40px;
+  height: 40px;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.modal-header-title {
+  font-size: var(--text-title-4);
+}
+
+.modal-body {
+}
+
+.modal-footer {
+}
+
+.modal-footer-content {
+  display: flex;
+  justify-content: flex-end;
+  gap: functions.calc-spacing(2);
+}

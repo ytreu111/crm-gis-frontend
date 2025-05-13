@@ -1,4 +1,5 @@
-import { ThemeProvider } from '../src/components/theme-provider'
+import '../src/style/index.scss'
+import { AntdConfigProvider } from '../src'
 
 /** @type { import('@storybook/react').Preview } */
 const preview = {
@@ -14,9 +15,9 @@ const preview = {
 
 export const decorators = [
   (Story) => (
-    <ThemeProvider>
+    <AntdConfigProvider>
       <Story />
-    </ThemeProvider>
+    </AntdConfigProvider>
   ),
 ]
 

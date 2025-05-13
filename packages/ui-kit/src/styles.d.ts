@@ -1,6 +1,4 @@
-import type { Theme } from './style'
-
-declare module 'styled-components' {
-  export interface DefaultTheme extends Theme {
-  }
+declare module '*.module.scss' {
+  const classes: { [key: string]: string }
+  export default classes
 }

@@ -1,0 +1,1 @@
+export { AntdConfigProvider } from './antd-config-provider'

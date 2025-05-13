@@ -1,0 +1,20 @@
+@use "sass:color";
+
+$bg: #2F343F;
+$bg-secondary: #262B33;
+$bg-additional: #444A58;
+
+$text: #F0F0F0;
+$text-secondary: #94A6C3;
+//$text-additional: #6A7B9B;
+$text-additional: #4A576E;
+$text-button: #F1F3F6;
+
+$button-additional: #2f343f;
+$button-additional-hover: #444A58;
+
+$icon: #F1F3F6;
+
+$accent: #5294E2;
+$accent-hover: color.adjust($accent, $lightness: -10%);
+

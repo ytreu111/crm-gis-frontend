@@ -1,0 +1,20 @@
+{
+  "name": "@workspace/icons",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "storybook": "storybook dev -p 6006"
+  },
+  "dependencies": {
+    "classnames": "^2.5.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "csstype": "^3.1.3"
+  }
+}

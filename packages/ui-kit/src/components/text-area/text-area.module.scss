@@ -1,0 +1,19 @@
+@use "../../style/functions";
+
+.text-area {
+  font-family: inherit !important;
+  border: 1px solid var(--color-bg-additional) !important;
+  background-color: var(--color-bg) !important;
+  color: var(--color-text) !important;
+  border-radius: var(--radius-sm) !important;
+  padding: functions.calc-spacing(1) !important;
+
+  &:hover, &:focus {
+    border-color: var(--color-accent) !important;
+    box-shadow: none !important;
+  }
+
+  &::placeholder {
+    color: var(--color-text-secondary) !important;
+  }
+}

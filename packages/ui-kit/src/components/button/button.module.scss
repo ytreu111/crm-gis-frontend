@@ -1,0 +1,189 @@
+@use "../../style/colors";
+@use "../../style/functions";
+@use "../../style/decorations";
+@use "../../style/text";
+@use "sass:color";
+
+@mixin solid-variant($button-bg-color, $button-bg-hover-color, $button-text-color) {
+  &.variant-solid {
+    background: $button-bg-color;
+    color: $button-text-color;
+
+    &:global(:not(:disabled):not(.ant-btn-disabled):hover) {
+      background: $button-bg-hover-color;
+    }
+  }
+}
+
+@mixin filled-variant($button-bg-color, $button-text-color) {
+  &.variant-filled {
+    background: color.change($button-bg-color, $alpha: 0.08);
+    color: $button-text-color;
+
+    &:global(:not(:disabled):not(.ant-btn-disabled):hover) {
+      background: color.change($button-bg-color, $alpha: 0.16);
+    }
+  }
+}
+
+@mixin outlined-variant(
+  $button-bg-color,
+  $button-bg-hover-color,
+  $button-text-color,
+  $button-text-hover-color
+) {
+  &.variant-outlined {
+    background: transparent;
+    color: $button-text-color;
+    border-color: $button-bg-color;
+
+    &:global(:not(:disabled):not(.ant-btn-disabled):hover) {
+      background: transparent;
+      border-color: $button-bg-hover-color;
+      color: $button-text-hover-color;
+    }
+  }
+}
+
+@mixin text-variant($button-bg-color, $button-text-color) {
+  &.variant-text {
+    background: transparent;
+    color: $button-text-color;
+
+    &:global(:not(:disabled):not(.ant-btn-disabled):hover) {
+      background: color.change($button-bg-color, $alpha: 0.16);
+      color: $button-text-color;
+    }
+  }
+}
+
+@mixin link-variant($button-text-color) {
+  &.variant-link {
+    background: transparent;
+    color: $button-text-color;
+
+    &:global(:not(:disabled):not(.ant-btn-disabled):hover) {
+      color: $button-text-color;
+    }
+  }
+}
+
+.button-content {
+
+}
+
+.button {
+  font-family: inherit;
+  border-radius: 0;
+
+  :global(.ant-btn-icon) {
+    display: inline-flex;
+  }
+
+  &.color {
+    &-default {
+      @include solid-variant(colors.$accent, colors.$accent-hover, colors.$text-button);
+      @include filled-variant(colors.$accent, colors.$accent);
+      @include outlined-variant(colors.$accent, colors.$accent-hover, colors.$accent, colors.$accent);
+      @include text-variant(colors.$accent, colors.$accent);
+      @include link-variant(colors.$accent);
+    }
+
+    &-additional {
+      @include solid-variant(colors.$button-additional, colors.$button-additional-hover, colors.$text-button);
+      @include filled-variant(colors.$button-additional, colors.$text-button);
+      @include outlined-variant(colors.$text-button, colors.$accent-hover, colors.$text-button, colors.$accent);
+      @include text-variant(colors.$button-additional, colors.$text-button);
+      @include link-variant(colors.$text-button);
+    }
+  }
+
+  &.size {
+    &-small {
+      height: 28px;
+      padding: 0 functions.calc-spacing(1);
+
+      &.rounded-small {
+        border-radius: var(--radius-xs);
+      }
+
+      &.rounded-large {
+        border-radius: var(--radius-md);
+      }
+
+      &:not(:global(.ant-btn-icon-only)):has(:global(> .ant-btn-icon)) {
+        padding-left: functions.calc-spacing(0.5);
+      }
+
+      &:global(.ant-btn-icon-only) {
+        padding: 0;
+        width: 28px;
+      }
+
+      .button-content {
+        font-size: var(--text-2);
+        line-height: 1.5;
+      }
+    }
+
+    &-middle {
+      height: 40px;
+      padding: 0 functions.calc-spacing(2);
+
+      &.rounded-small {
+        border-radius: var(--radius-sm);
+      }
+
+      &.rounded-large {
+        border-radius: var(--radius-lg);
+      }
+
+      &:not(:global(.ant-btn-icon-only)):has(:global(> .ant-btn-icon)) {
+        padding-left: functions.calc-spacing(1.5);
+      }
+
+      &:global(.ant-btn-icon-only) {
+        padding: 0;
+        width: 40px;
+      }
+
+      .button-content {
+        @include text.text-2()
+      }
+    }
+
+    &-large {
+      height: 56px;
+      padding: 0 functions.calc-spacing(3);
+
+      &.rounded-small {
+        border-radius: var(--radius-md);
+      }
+
+      &.rounded-large {
+        border-radius: var(--radius-xl);
+      }
+
+      &:not(:global(.ant-btn-icon-only)):has(:global(> .ant-btn-icon)) {
+        padding-left: functions.calc-spacing(2.25);
+      }
+
+      &:global(.ant-btn-icon-only) {
+        padding: 0;
+        width: 56px;
+      }
+
+      .button-content {
+        font-size: var(--text-2);
+        line-height: 1.5;
+      }
+    }
+  }
+
+  &.rounded-round {
+    border-radius: 100%;
+  }
+}
+
+
+

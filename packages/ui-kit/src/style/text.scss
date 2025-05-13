@@ -1,0 +1,19 @@
+$text-1: 16px;
+$text-2: 14px;
+$text-3: 12px;
+
+$text-title-1: 38px;
+$text-title-2: 30px;
+$text-title-3: 24px;
+$text-title-4: 20px;
+$text-title-5: 16px;
+
+@mixin text-1($important: false) {
+  font-size: $text-1#{if($important, ' !important', '')};
+  line-height: 20px#{if($important, ' !important', '')};
+}
+
+@mixin text-2($important: false) {
+  font-size: $text-2#{if($important, ' !important', '')};
+  line-height: 20px#{if($important, ' !important', '')};
+}

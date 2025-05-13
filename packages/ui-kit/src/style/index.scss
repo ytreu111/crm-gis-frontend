@@ -1,0 +1,41 @@
+@use "colors";
+@use "text";
+@use "decorations";
+@use "tailwindcss";
+
+@theme static {
+  --color-bg: #{colors.$bg};
+  --color-bg-secondary: #262B33;
+  --color-bg-additional: #{colors.$bg-additional};
+
+  --color-text: #{colors.$text};
+  --color-text-secondary: #{colors.$text-secondary};
+  --color-text-additional: #{colors.$text-additional};
+  --color-text-button: #{colors.$text-button};
+
+  --color-icon: #{colors.$icon};
+
+  --color-accent: #{colors.$accent};
+  --color-accent-hover: #{colors.$accent-hover};
+  --color-accent-opacity: rgba(82, 148, 226, 0.08);
+  --color-success: #34D399;
+  --color-warning: #FBBF24;
+  --color-danger: #F87171;
+
+  --text-1: #{text.$text-1};
+  --text-2: #{text.$text-2};
+  --text-3: #{text.$text-3};
+  --text-title-1: #{text.$text-title-1};
+  --text-title-2: #{text.$text-title-2};
+  --text-title-3: #{text.$text-title-3};
+  --text-title-4: #{text.$text-title-4};
+  --text-title-5: #{text.$text-title-5};
+
+  --radius-xs: #{decorations.$radius-xs};
+  --radius-sm: #{decorations.$radius-sm};
+  --radius-md: #{decorations.$radius-md};
+  --radius-lg: #{decorations.$radius-lg};
+  --radius-xl: #{decorations.$radius-xl};
+
+  --spacing: #{decorations.$spacing};
+}

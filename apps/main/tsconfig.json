@@ -23,11 +23,23 @@
       }
     ],
     "paths": {
+      "@/pages/*": [
+        "./src/[2]pages/*"
+      ],
+      "@/widgets/*": [
+        "./src/[3]widgets/*"
+      ],
+      "@/features/*": [
+        "./src/[4]features/*"
+      ],
+      "@/entities/*": [
+        "./src/[5]entities/*"
+      ],
+      "@/shared/*": [
+        "./src/[6]shared/*"
+      ],
       "@/*": [
         "./src/*"
-      ],
-      "styled-system/*": [
-        "./styled-system/*"
       ]
     }
   },

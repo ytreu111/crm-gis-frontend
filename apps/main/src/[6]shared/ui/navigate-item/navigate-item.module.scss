@@ -1,0 +1,47 @@
+@use "@workspace/ui-kit/src/style/functions";
+
+.wrap {
+  display: flex;
+  height: 42px;
+  align-items: center;
+  padding: 0 functions.calc-spacing(2);
+  gap: functions.calc-spacing(1.5);
+  color: var(--color-text-button);
+
+  &:not(.disabled):not(.active):hover {
+    cursor: pointer;
+    color: var(--color-accent);
+    background: var(--color-accent-opacity);
+  }
+
+  &.active {
+    color: var(--color-text-button);
+    background: var(--color-accent);
+  }
+
+  &.icon-only {
+    width: 56px;
+    justify-content: center;
+  }
+
+  &.rounded {
+    border-radius: var(--radius-md);
+  }
+
+  &.large {
+    height: 56px;
+  }
+
+  &.disabled {
+    cursor: default;
+    color: var(--color-text-additional);
+  }
+}
+
+.icon {
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+

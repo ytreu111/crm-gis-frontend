@@ -1,0 +1,3 @@
+@function calc-spacing($multiplier) {
+  @return calc(var(--spacing) * #{$multiplier});
+}
